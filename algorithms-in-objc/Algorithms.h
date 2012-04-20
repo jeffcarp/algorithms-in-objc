@@ -10,11 +10,17 @@
 
 @interface Algorithms : NSObject
 
-/* Kadane's maximum subarray problem
+/* Kadane's Algorithm: maximum subarray problem
  http://en.wikipedia.org/wiki/Maximum_subarray_problem
  http://en.wikipedia.org/wiki/Dynamic_programming
  */
 + (NSNumber *)findGreatestContiguousSumInArray:(NSArray *)arrayOfNSNumbers;
+
+/* Greedy Algorithm: change making problem
+ http://en.wikipedia.org/wiki/Greedy_algorithm
+ http://en.wikipedia.org/wiki/Change-making_problem
+ */
++ (int)fewestCoinsToMakeChangeForMoney:(double)anAmountOfMoney;                             
 
 
 

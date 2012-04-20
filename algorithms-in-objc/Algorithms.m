@@ -24,4 +24,30 @@
     return greatestContiguousSum;
 }
 
++ (int)fewestCoinsToMakeChangeForMoney:(double)anAmountOfMoney;                             
+{    
+    double quarter = .25;
+    double dime = .10;
+    double nickel = .05;
+    double penny = .01;
+    
+    double remainingAmount = 0;
+    
+    if (quarter <= anAmountOfMoney) {
+        remainingAmount = anAmountOfMoney - quarter;
+    } else if (dime <= anAmountOfMoney) {
+        remainingAmount = anAmountOfMoney - dime;
+    } else if (nickel <= anAmountOfMoney) {
+        remainingAmount = anAmountOfMoney - nickel;
+    } else if (penny <= anAmountOfMoney) {
+        remainingAmount = anAmountOfMoney - penny;
+    }
+
+    if (remainingAmount > 0) {
+        return 1+[self fewestCoinsToMakeChangeForMoney:remainingAmount];
+    } else {
+        return 1;
+    }
+}
+
 @end

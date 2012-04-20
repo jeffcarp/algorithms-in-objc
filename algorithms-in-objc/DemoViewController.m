@@ -29,9 +29,28 @@
     return array;
 }
 
+- (NSSet *)demoSetOfCoins
+{
+    NSNumber *penny = [NSNumber numberWithDouble:.01];
+    NSNumber *nickel = [NSNumber numberWithDouble:.05];
+    NSNumber *dime = [NSNumber numberWithDouble:.1];
+    NSNumber *quarter = [NSNumber numberWithDouble:.25];
+    NSSet *setOfCoins = [NSSet setWithObjects:penny,nickel,dime,quarter, nil];
+    return setOfCoins;
+}
+
+- (NSNumber *)aDollar
+{
+    NSNumber *dollar = [NSNumber numberWithDouble:1];
+    return dollar;
+}
+
 - (void)viewDidLoad
 {
     [Algorithms findGreatestContiguousSumInArray:[self demoArrayOfNumbers]];
+    
+    int fewestCoins = [Algorithms fewestCoinsToMakeChangeForMoney:.49];
+    NSLog(@"%i",fewestCoins);
 }
 
 @end
