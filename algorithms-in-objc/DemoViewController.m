@@ -51,6 +51,8 @@
     
     int fewestCoins = [Algorithms fewestCoinsToMakeChangeForMoney:.49];
     NSLog(@"%i",fewestCoins);
+    
+    NSLog(@"60 choose 2: %i", [Algorithms forNObjects:60 choose:2]);
 }
 
 @end

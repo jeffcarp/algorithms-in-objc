@@ -23,5 +23,9 @@
 + (int)fewestCoinsToMakeChangeForMoney:(double)anAmountOfMoney;                             
 
 
+/* K-choose-N Algorithm
+ http://en.wikipedia.org/wiki/Combination
+ */
++ (int)forNObjects:(int)n choose:(int)k;
 
 @end

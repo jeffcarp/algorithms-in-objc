@@ -24,7 +24,7 @@
     return greatestContiguousSum;
 }
 
-+ (int)fewestCoinsToMakeChangeForMoney:(double)anAmountOfMoney;                             
++ (int)fewestCoinsToMakeChangeForMoney:(double)anAmountOfMoney                           
 {    
     double quarter = .25;
     double dime = .10;
@@ -47,6 +47,15 @@
         return 1+[self fewestCoinsToMakeChangeForMoney:remainingAmount];
     } else {
         return 1;
+    }
+}
+
++ (int)forNObjects:(int)n choose:(int)k
+{    
+    if (k == 0 || k == n) {
+        return 1;
+    } else {
+        return [self forNObjects:n-1 choose:k] + [self forNObjects:n-1 choose:k-1];
     }
 }
 
