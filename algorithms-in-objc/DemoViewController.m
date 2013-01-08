@@ -9,13 +9,29 @@
 #import "DemoViewController.h"
 #import "Algorithms.h"
 
+@interface DemoViewController ()
+@property (strong, nonatomic) NSDictionary *algorithmDictionary;
+@end
+
 @implementation DemoViewController
 
-
+@synthesize algorithmDictionary;
 
 - (void)viewDidLoad
 {
     self.title = @"Algorithms in Objective-C";
+    
+    self.algorithmDictionary = @{
+        @"Combination": @[
+            @"Fewest coins to make change",
+            @"N choose K",
+            @"Greatest contiguous sum in array"
+        ],
+        @"Machine Learning": @[
+            @"Support Vector Machine",
+            @"K-nearest-neighbor"
+        ]
+    };
     
     [Algorithms findGreatestContiguousSumInArray:[self demoArrayOfNumbers]];
     
@@ -23,6 +39,54 @@
     NSLog(@"%i",fewestCoins);
     
     NSLog(@"60 choose 2: %i", [Algorithms forNObjects:60 choose:2]);
+}
+
+#pragma mark - UITableViewDelegate methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [self.algorithmDictionary count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    NSArray *keys = [self.algorithmDictionary allKeys];
+    return [keys objectAtIndex:section];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    NSArray *keys = [self.algorithmDictionary allKeys];
+    id key = [keys objectAtIndex:section];
+    return [[self.algorithmDictionary objectForKey:key] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"Cell";
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier]   ;
+    }
+    
+    [self configureCell:cell forRowAtIndexPath:indexPath];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    NSArray *keys = [self.algorithmDictionary allKeys];
+    id key = [keys objectAtIndex:indexPath.section];
+    NSArray *algorithmList = [self.algorithmDictionary objectForKey:key];
+    
+    cell.textLabel.text = [algorithmList objectAtIndex:indexPath.row];
 }
 
 - (NSArray *)demoArrayOfNumbers
