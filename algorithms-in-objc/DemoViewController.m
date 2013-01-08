@@ -23,9 +23,9 @@
     self.title = @"Algorithms";
     
     self.algorithmDictionary = @{
-        @"Combination": @[
+        @"Combinatorial": @[
             @"Fewest coins to make change",
-            @"N choose K",
+            @"Binomial Coefficient",
             @"Greatest contiguous sum in array"
         ],
         @"Machine Learning": @[
