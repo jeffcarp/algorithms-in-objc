@@ -15,6 +15,7 @@
 		D67DA00D1541491F00B24958 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D67DA00C1541491F00B24958 /* AppDelegate.m */; };
 		D67DA0191541499400B24958 /* Algorithms.m in Sources */ = {isa = PBXBuildFile; fileRef = D67DA0181541499400B24958 /* Algorithms.m */; };
 		D67DA01D154149E500B24958 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67DA01C154149E500B24958 /* DemoViewController.m */; };
+		F91C0D36169CA6CD00E6FEF6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F91C0D35169CA6CD00E6FEF6 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D67DA0181541499400B24958 /* Algorithms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Algorithms.m; sourceTree = "<group>"; };
 		D67DA01B154149E500B24958 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		D67DA01C154149E500B24958 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		F91C0D35169CA6CD00E6FEF6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		D67D9FED1541491F00B24958 = {
 			isa = PBXGroup;
 			children = (
+				F91C0D35169CA6CD00E6FEF6 /* Default-568h@2x.png */,
 				D67DA0021541491F00B24958 /* algorithms-in-objc */,
 				D67D9FFB1541491F00B24958 /* Frameworks */,
 				D67D9FF91541491F00B24958 /* Products */,
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D67DA0071541491F00B24958 /* InfoPlist.strings in Resources */,
+				F91C0D36169CA6CD00E6FEF6 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +207,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -222,7 +226,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -236,7 +240,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "algorithms-in-objc/algorithms-in-objc-Prefix.pch";
 				INFOPLIST_FILE = "algorithms-in-objc/algorithms-in-objc-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -247,7 +253,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "algorithms-in-objc/algorithms-in-objc-Prefix.pch";
 				INFOPLIST_FILE = "algorithms-in-objc/algorithms-in-objc-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

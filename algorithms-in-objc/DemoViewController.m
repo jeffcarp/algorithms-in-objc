@@ -7,10 +7,23 @@
 //
 
 #import "DemoViewController.h"
-
 #import "Algorithms.h"
 
 @implementation DemoViewController
+
+
+
+- (void)viewDidLoad
+{
+    self.title = @"Algorithms in Objective-C";
+    
+    [Algorithms findGreatestContiguousSumInArray:[self demoArrayOfNumbers]];
+    
+    int fewestCoins = [Algorithms fewestCoinsToMakeChangeForMoney:.49];
+    NSLog(@"%i",fewestCoins);
+    
+    NSLog(@"60 choose 2: %i", [Algorithms forNObjects:60 choose:2]);
+}
 
 - (NSArray *)demoArrayOfNumbers
 {
@@ -43,16 +56,6 @@
 {
     NSNumber *dollar = [NSNumber numberWithDouble:1];
     return dollar;
-}
-
-- (void)viewDidLoad
-{
-    [Algorithms findGreatestContiguousSumInArray:[self demoArrayOfNumbers]];
-    
-    int fewestCoins = [Algorithms fewestCoinsToMakeChangeForMoney:.49];
-    NSLog(@"%i",fewestCoins);
-    
-    NSLog(@"60 choose 2: %i", [Algorithms forNObjects:60 choose:2]);
 }
 
 @end
