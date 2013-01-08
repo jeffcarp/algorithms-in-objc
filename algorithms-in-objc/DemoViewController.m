@@ -7,6 +7,7 @@
 //
 
 #import "DemoViewController.h"
+#import "AlgorithmViewController.h"
 #import "Algorithms.h"
 
 @interface DemoViewController ()
@@ -19,7 +20,7 @@
 
 - (void)viewDidLoad
 {
-    self.title = @"Algorithms in Objective-C";
+    self.title = @"Algorithms";
     
     self.algorithmDictionary = @{
         @"Combination": @[
@@ -77,16 +78,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    AlgorithmViewController *receiver = [[AlgorithmViewController alloc] init];
+    receiver.title = [self algorithmAtIndexPath:indexPath];
+    [self.navigationController pushViewController:receiver animated:YES];
 }
 
 - (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
+    cell.textLabel.text = [self algorithmAtIndexPath:indexPath];
+}
+
+- (NSString *)algorithmAtIndexPath:(NSIndexPath *)indexPath {
     NSArray *keys = [self.algorithmDictionary allKeys];
     id key = [keys objectAtIndex:indexPath.section];
     NSArray *algorithmList = [self.algorithmDictionary objectForKey:key];
-    
-    cell.textLabel.text = [algorithmList objectAtIndex:indexPath.row];
+    return [algorithmList objectAtIndex:indexPath.row];
 }
 
 - (NSArray *)demoArrayOfNumbers
